@@ -219,18 +219,18 @@ int search(FILE *db_file, char *name)
   
   entry *p = load_entries(db_file);
   entry *base = p;
-  int t=0;
+  int search=0;
   
   while (p!=NULL) 
   {
     if(strcmp(name,p->name)==0)
       { 
         printf("%s\n",p->phone);
-        t=1;
+        search=1;
       }
       p=p->next;
   }
-  if(t!=1)
+  if(search!=1)
   {
     return 0;
   }
